@@ -1,0 +1,21 @@
+<h2 class="mb-5">External Properties Data</h2>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Address</th>
+      <th scope="col">YearBuilt</th>
+      <th scope="col">ListPrice</th>
+      <th scope="col">MonthlyRent</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr mdbTableCol *ngFor="let realProperty of realProperties">
+      <td>{{realProperty.address}}</td>
+      <td>{{realProperty.yearBuilt}}</td>
+      <td>{{realProperty.listPrice}}</td>
+      <td>{{realProperty.monthlyRent}}</td>
+      <td><button type="button" class="btn btn-success" (click)="AddExternalToInteral(realProperty)"><i class="fa fa-plus-circle"></i> Add to internal data</button></td>
+    </tr>
+  </tbody>
+</table>

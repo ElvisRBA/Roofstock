@@ -1,0 +1,19 @@
+<h2 class="mb-5">Internal Properties Data</h2>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Address</th>
+      <th scope="col">YearBuilt</th>
+      <th scope="col">ListPrice</th>
+      <th scope="col">MonthlyRent</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr mdbTableCol *ngFor="let realProperty of realProperties">
+      <td>{{realProperty.address}}</td>
+      <td>{{realProperty.yearBuilt}}</td>
+      <td>{{realProperty.listPrice}}</td>
+      <td>{{realProperty.monthlyRent}}</td>
+    </tr>
+  </tbody>
+</table>

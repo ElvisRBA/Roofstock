@@ -1,1 +1,9 @@
-<h1>Welcome to {{title}}</h1>
+<ngx-spinner>
+  <h3 style="color: #fff;">Loading...</h3>
+</ngx-spinner>
+<app-nav-bar></app-nav-bar>
+<div class="container">
+  <h1 class="mt-5 mb-5">Welcome to {{title}} properties</h1>
+  <router-outlet></router-outlet>
+  <app-footer></app-footer>
+</div>

@@ -1,27 +1,54 @@
-# Client
+# SPA Project
+The SPA project supports the functionalities for the frontend of the application.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.3.
+## Installation
 
-## Development server
+Go to the SSL folder and install the server.crt certificate to run the application over HTTPS.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Follow the instructions below:
 
-## Code scaffolding
+**OS X**
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+```bash
+	1. Double click on the certificate (server.crt).
+	2. Select your desired keychain (login should suffice).
+	3. Add the certificate.
+	4. Open Keychain Access if it isn’t already open.
+	5. Select the keychain you chose earlier.
+	6. You should see the certificate localhost.
+	7. Double click on the certificate.
+	8. Expand Trust.
+	9. Select the option Always Trust in When using this certificate.
+	10. Close the certificate window.
 
-## Build
+	The certificate is now installed.
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+**Windows 10**
 
-## Running unit tests
+```bash
+	1. Double click on the certificate (server.crt).
+	2. Click on the button “Install Certificate …”.
+	3. Select whether you want to store it on the user level or on the machine level.
+	4. Click “Next”.
+	5. Select “Place all certificates in the following store”.
+	6. Click “Browse”.
+	7. Select “Trusted Root Certification Authorities”.
+	8. Click “Ok”.
+	9. Click “Next”.
+	10. Click “Finish”.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+	If you get a prompt, click “Yes”.
+```
 
-## Running end-to-end tests
+## Usage
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+Run the following commands to start the SPA:
 
-## Further help
+```bash
+	npm install
+	ng serve
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## Support
+For any questions or comments, please contact me at elvis.rocha@avantica.com
