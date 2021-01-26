@@ -8,7 +8,7 @@ namespace API.Helpers
     {
         public MappingProfiles()
         {
-            CreateMap<RealProperty, RealPropertyToReturnDto>();
+            CreateMap<RealProperty, RealPropertyDto>().ReverseMap();
         }
     }
 }

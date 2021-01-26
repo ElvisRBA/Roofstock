@@ -1,6 +1,6 @@
 namespace API.Dtos
 {
-    public class RealPropertyToReturnDto
+    public class RealPropertyDto
     {
         public int Id { get; set; }
         public string Address { get; set; }
