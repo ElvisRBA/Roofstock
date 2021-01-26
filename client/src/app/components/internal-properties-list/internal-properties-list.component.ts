@@ -15,7 +15,14 @@ export class InternalPropertiesListComponent implements OnInit {
 
 	ngOnInit(): void {
 		this.roofstockService.getInternalProperties().subscribe((response) => {
-				this.realProperties = response
+				this.realProperties = response.map(property => (
+					{ 
+						address: property.address,
+						yearBuilt: property.yearBuilt,
+						listPrice: property.listPrice,
+						monthlyRent: property.monthlyRent,
+						grossYield: (property.monthlyRent * 12 / property.listPrice) ? (property.monthlyRent * 12 / property.listPrice) : 0,
+					}));
 			}, error => {
 			console.log(error);
 			});

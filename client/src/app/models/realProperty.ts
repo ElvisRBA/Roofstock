@@ -4,4 +4,5 @@ export interface IRealProperty {
     yearBuilt?: number;
     listPrice?: number;
     monthlyRent?: number;
+    grossYield?: number;
 }

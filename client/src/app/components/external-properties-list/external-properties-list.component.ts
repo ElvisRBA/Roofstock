@@ -19,10 +19,12 @@ export class ExternalPropertiesListComponent implements OnInit {
 		this.roofstockService.getExternalProperties().subscribe((response) => {
 			this.realProperties = response['properties'].map(property => (
 				{ 
-				address: property['address']['address1'],
-				yearBuilt: property['physical'] ? property['physical']['yearBuilt'] : 0,
-				listPrice: property['financial'] ? property['financial']['listPrice'] : 0,
-				monthlyRent: property['financial'] ? property['financial']['monthlyRent'] : 0,
+					address: property['address']['address1'],
+					yearBuilt: property['physical'] ? property['physical']['yearBuilt'] : 0,
+					listPrice: property['financial'] ? parseFloat(property['financial']['listPrice']) : 0,
+					monthlyRent: property['financial'] ? parseFloat(property['financial']['monthlyRent']) : 0,
+					grossYield: ((property['financial'] ? parseFloat(property['financial']['monthlyRent']) : 0) * 12 / (property['financial'] ? parseFloat(property['financial']['listPrice']) : 0)) ? 
+					((property['financial'] ? parseFloat(property['financial']['monthlyRent']) : 0) * 12 / (property['financial'] ? parseFloat(property['financial']['listPrice']) : 0)) : 0,
 				}));
 			}, error => {
 			console.log(error);

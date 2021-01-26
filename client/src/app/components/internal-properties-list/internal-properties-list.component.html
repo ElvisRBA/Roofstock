@@ -6,14 +6,16 @@
       <th scope="col">YearBuilt</th>
       <th scope="col">ListPrice</th>
       <th scope="col">MonthlyRent</th>
+      <th scope="col">Gross Yield</th>
     </tr>
   </thead>
   <tbody>
     <tr mdbTableCol *ngFor="let realProperty of realProperties">
       <td>{{realProperty.address}}</td>
       <td>{{realProperty.yearBuilt}}</td>
-      <td>{{realProperty.listPrice}}</td>
-      <td>{{realProperty.monthlyRent}}</td>
+      <td>{{realProperty.listPrice | currency:"":"symbol"}}</td>
+      <td>{{realProperty.monthlyRent | currency:"":"symbol"}}</td>
+      <td>{{realProperty.grossYield | percent:'2.2'}}</td>
     </tr>
   </tbody>
 </table>
