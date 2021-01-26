@@ -8,8 +8,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Infrastructure.Data.Migrations
 {
     [DbContext(typeof(RoofstockContext))]
-    [Migration("20210126022929_CreatingRealPropertyTable")]
-    partial class CreatingRealPropertyTable
+    [Migration("20210126041449_InitialCreate")]
+    partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -24,13 +24,15 @@ namespace Infrastructure.Data.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Address")
-                        .HasColumnType("TEXT");
+                        .IsRequired()
+                        .HasColumnType("TEXT")
+                        .HasMaxLength(256);
 
-                    b.Property<decimal>("ListPrice")
-                        .HasColumnType("TEXT");
+                    b.Property<double>("ListPrice")
+                        .HasColumnType("decimal(18,2)");
 
-                    b.Property<decimal>("MonthlyRent")
-                        .HasColumnType("TEXT");
+                    b.Property<double>("MonthlyRent")
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<int>("YearBuilt")
                         .HasColumnType("INTEGER");

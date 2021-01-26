@@ -1,6 +1,10 @@
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
+using API.Dtos;
+using AutoMapper;
 using Core.Entities;
+using Core.Interfaces;
 using Infrastructure.Data;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -11,25 +15,28 @@ namespace API.Controllers
     [Route("api/[controller]")]
     public class PropertiesController : ControllerBase
     {
-        private readonly RoofstockContext _context;
-        public PropertiesController(RoofstockContext context)
+        private readonly IGenericRepository<RealProperty> _realPropertyRepo;
+        private readonly IMapper _mapper;
+        public PropertiesController(IGenericRepository<RealProperty> realPropertyRepo, IMapper mapper)
         {
-            _context = context;
-
+            _mapper = mapper;
+            _realPropertyRepo = realPropertyRepo;
         }
 
         [HttpGet]
-        public async Task<ActionResult<List<RealProperty>>> GetProperties()
+        public async Task<ActionResult<IReadOnlyList<RealPropertyToReturnDto>>> GetProperties()
         {
-            var properties = await _context.Properties.ToListAsync();
+            var properties = await _realPropertyRepo.ListAllAsync();
 
-            return Ok(properties);
+            return Ok(_mapper
+            .Map<IReadOnlyList<RealProperty>, IReadOnlyList<RealPropertyToReturnDto>>(properties));
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<RealProperty>> GetProperty(int id)
+        public async Task<ActionResult<RealPropertyToReturnDto>> GetProperty(int id)
         {
-            return await _context.Properties.FindAsync(id);
+            var property = await _realPropertyRepo.GetByIdAsync(id);
+            return _mapper.Map<RealProperty, RealPropertyToReturnDto>(property);
         }
     }
 }

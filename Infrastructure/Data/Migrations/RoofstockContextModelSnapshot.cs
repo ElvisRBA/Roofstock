@@ -22,13 +22,15 @@ namespace Infrastructure.Data.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Address")
-                        .HasColumnType("TEXT");
+                        .IsRequired()
+                        .HasColumnType("TEXT")
+                        .HasMaxLength(256);
 
-                    b.Property<decimal>("ListPrice")
-                        .HasColumnType("TEXT");
+                    b.Property<double>("ListPrice")
+                        .HasColumnType("decimal(18,2)");
 
-                    b.Property<decimal>("MonthlyRent")
-                        .HasColumnType("TEXT");
+                    b.Property<double>("MonthlyRent")
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<int>("YearBuilt")
                         .HasColumnType("INTEGER");

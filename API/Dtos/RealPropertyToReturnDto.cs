@@ -1,7 +1,8 @@
-namespace Core.Entities
+namespace API.Dtos
 {
-    public class RealProperty : BaseEntity
+    public class RealPropertyToReturnDto
     {
+        public int Id { get; set; }
         public string Address { get; set; }
         public int YearBuilt { get; set; }
         public decimal ListPrice { get; set; }

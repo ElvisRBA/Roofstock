@@ -2,7 +2,7 @@
 
 namespace Infrastructure.Data.Migrations
 {
-    public partial class CreatingRealPropertyTable : Migration
+    public partial class InitialCreate : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -12,10 +12,10 @@ namespace Infrastructure.Data.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    Address = table.Column<string>(nullable: true),
+                    Address = table.Column<string>(maxLength: 256, nullable: false),
                     YearBuilt = table.Column<int>(nullable: false),
-                    ListPrice = table.Column<decimal>(nullable: false),
-                    MonthlyRent = table.Column<decimal>(nullable: false)
+                    ListPrice = table.Column<double>(type: "decimal(18,2)", nullable: false),
+                    MonthlyRent = table.Column<double>(type: "decimal(18,2)", nullable: false)
                 },
                 constraints: table =>
                 {
