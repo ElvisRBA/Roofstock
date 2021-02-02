@@ -12,7 +12,7 @@ dotnet build
 dotnet watch run
 ```
 
-# client Project
+# Client Project
 The client project supports the functionalities for the frontend of the application.
 
 ## Installation
@@ -62,7 +62,7 @@ Run the following commands to start the client application:
 ```bash
 	npm install
 	ng serve
-    Open your browser and enter the URL: https://localhost:4200
+    open your browser and enter the URL: https://localhost:4200
 ```
 
 ## Support
