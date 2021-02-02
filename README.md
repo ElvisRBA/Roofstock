@@ -3,7 +3,7 @@ The API project supports the functionalities for the backend of the application.
 
 ## Installation
 
-Run the following commands to start the API.
+In a cmd console navigate to the API Project and run the following commands to start the API.
 
 ```bash
 dotnet dev-certs https --trust
@@ -17,7 +17,7 @@ The client project supports the functionalities for the frontend of the applicat
 
 ## Installation
 
-Go to the SSL folder and install the server.crt certificate to run the application over HTTPS.
+Go to the SSL folder inside the Client Project and install the server.crt certificate to run the application over HTTPS.
 
 Follow the instructions below:
 
@@ -57,13 +57,14 @@ Follow the instructions below:
 
 ## Usage
 
-Run the following commands to start the client application:
+In a cmd console navigate to the Client Project and run the following commands to start the client application:
 
 ```bash
 npm install
 ng serve
-open your browser and enter the URL: https://localhost:4200
 ```
+
+After you have run the client application open your browser and enter the URL: https://localhost:4200
 
 ## Support
 For any questions or comments, please contact me at elvis.rocha@avantica.com
