@@ -60,9 +60,9 @@ Follow the instructions below:
 Run the following commands to start the client application:
 
 ```bash
-	npm install
-	ng serve
-    open your browser and enter the URL: https://localhost:4200
+npm install
+ng serve
+open your browser and enter the URL: https://localhost:4200
 ```
 
 ## Support
