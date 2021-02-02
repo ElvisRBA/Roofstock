@@ -1,5 +1,19 @@
-# SPA Project
-The SPA project supports the functionalities for the frontend of the application.
+# API Project
+The API project supports the functionalities for the backend of the application.
+
+## Installation
+
+Run the following commands to start the API.
+
+```bash
+dotnet dev-certs https --trust
+dotnet restore
+dotnet build
+dotnet watch run
+```
+
+# client Project
+The client project supports the functionalities for the frontend of the application.
 
 ## Installation
 
@@ -43,11 +57,12 @@ Follow the instructions below:
 
 ## Usage
 
-Run the following commands to start the SPA:
+Run the following commands to start the client application:
 
 ```bash
 	npm install
 	ng serve
+    Open your browser and enter the URL: https://localhost:4200
 ```
 
 ## Support
