@@ -8,6 +8,7 @@ import { catchError } from 'rxjs/operators';
 export class ErrorInterceptor implements HttpInterceptor {
     constructor(private router: Router) {}
 
+    // This interceptor is created to show the not-found or server-error components in case an error occurs.
     intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
         return next.handle(req).pipe(
             catchError(error => {

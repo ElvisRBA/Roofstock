@@ -14,6 +14,7 @@ namespace API
         public static async Task Main(string[] args)
         {
             var host = CreateHostBuilder(args).Build();
+            // In here I'm creating a migration of the database if it doesn't exist.
             using (var scope = host.Services.CreateScope())
             {
                 var services = scope.ServiceProvider;

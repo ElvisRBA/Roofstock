@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Infrastructure.Data.Config
 {
+    // This configuration guide the migration to create the rules for the RealProperty table
     public class RealPropertyConfigutation : IEntityTypeConfiguration<RealProperty>
     {
         public void Configure(EntityTypeBuilder<RealProperty> builder)

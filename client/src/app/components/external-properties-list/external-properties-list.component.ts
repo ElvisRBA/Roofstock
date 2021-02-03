@@ -16,6 +16,7 @@ export class ExternalPropertiesListComponent implements OnInit {
   	constructor(private roofstockService: RoofstockService, private toastr: ToastrService) { }
 
 	ngOnInit(): void {
+		// this service is called to retrieve the properties from the endpoint given and shape the data for its presentation.
 		this.roofstockService.getExternalProperties().subscribe((response) => {
 			this.realProperties = response['properties'].map(property => (
 				{ 
@@ -27,15 +28,14 @@ export class ExternalPropertiesListComponent implements OnInit {
 					((property['financial'] ? parseFloat(property['financial']['monthlyRent']) : 0) * 12 / (property['financial'] ? parseFloat(property['financial']['listPrice']) : 0)) : 0,
 				}));
 			}, error => {
-			console.log(error);
+				this.toastr.success(error, 'Error retrieving data');
 			});
 	}
 
+	// This method consumes the roofstockService to add a new property.
 	AddExternalToInteral(realproperty: IRealProperty) {
 		this.roofstockService.addInternalProperty(realproperty).subscribe((response) => {
 			this.toastr.success('New Property inserted on internal data','Property Created');
-		}
-		);
+		});
 	}
-
 }

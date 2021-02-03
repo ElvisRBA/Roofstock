@@ -6,6 +6,7 @@ using Core.Interfaces;
 
 namespace Infrastructure.Data
 {
+    // Here is the implementation of the IUnitOfWork Interface and in here is where the changes are tracked, and updated to the database.
     public class UnitOfWork : IUnitOfWork
     {
         private readonly RoofstockContext _context;
@@ -15,6 +16,7 @@ namespace Infrastructure.Data
             _context = context;
         }
 
+        // This method is responsible of saving the changes, and its atomic, all the tracked changes happen or none.
         public async Task<int> Complete()
         {
             return await _context.SaveChangesAsync();
@@ -25,6 +27,7 @@ namespace Infrastructure.Data
             _context.Dispose();
         }
 
+        // This method is responsible of tracking the changes from an especific the entity.
         public IGenericRepository<TEntity> Repository<TEntity>() where TEntity : BaseEntity
         {
             if(_repositories == null) _repositories = new Hashtable();

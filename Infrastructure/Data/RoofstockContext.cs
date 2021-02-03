@@ -5,6 +5,7 @@ using System.Linq;
 
 namespace Infrastructure.Data
 {
+    // Here is where is added the RealProperty table to the context so the migration can be executed.
     public class RoofstockContext : DbContext
     {
         public RoofstockContext(DbContextOptions<RoofstockContext> options) : base(options)

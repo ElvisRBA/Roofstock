@@ -9,6 +9,7 @@ using Microsoft.Extensions.Logging;
 
 namespace API.Middleware
 {
+    // Creating an exception middleware so that I can handle exceptions.
     public class ExceptionMiddleware
     {
         private readonly RequestDelegate _next;
@@ -25,6 +26,7 @@ namespace API.Middleware
         {
             try
             {
+                // If there is no exception I want the middleware to move on to the next piece of middleware.
                 await _next(context);
             }
             catch (Exception ex)
@@ -33,6 +35,7 @@ namespace API.Middleware
                 context.Response.ContentType = "application/json";
                 context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
 
+                // Validate if the app is running on dev or prod mode so the error information can be changed.
                 var response = _env.IsDevelopment()
                     ? new ApiException((int)HttpStatusCode.InternalServerError, ex.Message, ex.StackTrace.ToString())
                     : new ApiException((int)HttpStatusCode.InternalServerError);

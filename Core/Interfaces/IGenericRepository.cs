@@ -4,6 +4,7 @@ using Core.Entities;
 
 namespace Core.Interfaces
 {
+    // Interface of the GenericRepository methods that I can make us of. 
     public interface IGenericRepository<T> where T : BaseEntity
     {
          Task<T> GetByIdAsync(int id);

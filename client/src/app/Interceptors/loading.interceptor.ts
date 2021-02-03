@@ -7,7 +7,8 @@ import { delay, finalize } from 'rxjs/operators';
 @Injectable()
 export class LoadingInterceptor implements HttpInterceptor {
     constructor(private busyService: BusyService) {}
-
+    
+    // This interceptor is created to show or hide a spinner meanwhile an HTTP request is on course.
     intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
         this.busyService.busy();
         return next.handle(req).pipe(

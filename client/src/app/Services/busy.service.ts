@@ -8,7 +8,7 @@ export class BusyService {
   busyRequestCount = 0;
 
   constructor(private spinnerService: NgxSpinnerService) { }
-
+  // method to show a spinner in screen 
   busy() {
     this.busyRequestCount++;
     this.spinnerService.show(undefined, {
@@ -20,6 +20,7 @@ export class BusyService {
     });
   }
 
+  // method to hide a spinner in screen 
   idle() {
     this.busyRequestCount--;
     if (this.busyRequestCount <= 0) {

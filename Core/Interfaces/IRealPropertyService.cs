@@ -4,6 +4,7 @@ using Core.Entities;
 
 namespace Core.Interfaces
 {
+    // Interface of the RealPropertyService methods that I can make us of. 
     public interface IRealPropertyService
     {
          Task<RealProperty> CreateRealPropertyAsync(RealProperty realProperty);

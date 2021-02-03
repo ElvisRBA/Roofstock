@@ -6,6 +6,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure.Data
 {
+    // Here is the implementation of the IGenericRepository Interface and in here is where the context query the database.
     public class GenericRepository<T> : IGenericRepository<T> where T : BaseEntity
     {
         private readonly RoofstockContext _context;

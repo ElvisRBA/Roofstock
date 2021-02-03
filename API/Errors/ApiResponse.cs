@@ -1,5 +1,6 @@
 namespace API.Errors
 {
+    // Making the error responses consistent so that is easy for the angular application to consume and handle the error responses.
     public class ApiResponse
     {
         public ApiResponse(int statusCode, string message = null)
