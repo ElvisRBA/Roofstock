@@ -10,6 +10,9 @@
     </tr>
   </thead>
   <tbody>
+    <tr *ngIf="realProperties?.length === 0">
+      <td colspan="5" class="text-center">No data available</td>
+    </tr>
     <tr mdbTableCol *ngFor="let realProperty of realProperties">
       <td>{{realProperty.address}}</td>
       <td>{{realProperty.yearBuilt}}</td>

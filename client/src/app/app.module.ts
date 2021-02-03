@@ -17,6 +17,7 @@ import { ErrorInterceptor } from './Interceptors/error.interceptor';
 import { LoadingInterceptor } from './Interceptors/loading.interceptor';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { ToastrModule } from 'ngx-toastr';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { ToastrModule } from 'ngx-toastr';
     NotFoundComponent
   ],
   imports: [
+    CommonModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
