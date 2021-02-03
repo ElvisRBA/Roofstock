@@ -1,6 +1,10 @@
 # API Project
 The API project supports the functionalities for the backend of the application.
 
+## Requirements
+- .NET Core >= 3.1.301
+- DB Browser for SQLite (in case you want to inspect the "roofstock.db" database inside the API folder)
+
 ## Installation
 
 In a cmd console navigate to the API Project and run the following commands to start the API.
@@ -14,6 +18,11 @@ dotnet watch run
 
 # Client Project
 The client project supports the functionalities for the frontend of the application.
+
+## Requirements
+- npm >= 6.10.3
+- node >= 12.10.0
+- Angular CLI >= 10.1.3
 
 ## Installation
 
