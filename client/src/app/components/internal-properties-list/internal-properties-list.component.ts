@@ -24,7 +24,7 @@ export class InternalPropertiesListComponent implements OnInit {
 						listPrice: property.listPrice,
 						monthlyRent: property.monthlyRent,
 						grossYield: (property.monthlyRent * 12 / property.listPrice) ? (property.monthlyRent * 12 / property.listPrice) : 0,
-					}));
+					})).reverse();
 			}, error => {
 				console.log(error);
 				this.toastr.success(error, 'Error retrieving data');
